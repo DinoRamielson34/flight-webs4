@@ -7,8 +7,8 @@
  */
 $ds = DIRECTORY_SEPARATOR;
 require(__DIR__ . $ds . '..' . $ds . '..' . $ds . 'vendor' . $ds . 'autoload.php');
-if(file_exists(__DIR__. $ds . 'config.php') === false) {
-	Flight::halt(500, 'Config file not found. Please create a config.php file in the app/config directory to get started.');
+if(file_exists(__DIR__. $ds . 'config1.php') === false) {
+	Flight::halt(500, 'Config file not found. Please create a config1.php file in the app/config directory to get started.');
 }
 
 // It is better practice to not use static methods for everything. It makes your
@@ -21,7 +21,7 @@ $app = Flight::app();
  * P.S. When you require a php file and that file returns an array, the array
  * will be returned by the require statement where you can assign it to a var.
  */
-$config = require('config.php');
+$config = require('config1.php');
 
 // Whip out the ol' router and we'll pass that to the routes file
 $router = $app->router();
